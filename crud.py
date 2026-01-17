@@ -138,6 +138,6 @@ async def prune_old_snapshots(pads_id: str, keep: int = 20) -> None:
         )
         DELETE FROM chaospad.snapshots
         WHERE id IN (SELECT id FROM old)
-        """,
+        """,  # noqa: S608
         {"pads_id": pads_id, "keep": keep},
     )
