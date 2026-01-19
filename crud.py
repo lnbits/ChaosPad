@@ -110,7 +110,7 @@ async def create_snapshot(pads_id: str, update_blob: bytes) -> None:
 
 
 async def get_latest_snapshot(pads_id: str) -> bytes | None:
-    row = await db.fetchone(
+    row: dict | None = await db.fetchone(
         """
         SELECT update_blob
         FROM chaospad.snapshots
