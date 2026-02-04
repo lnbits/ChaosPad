@@ -383,6 +383,12 @@
 
           this.saveStatus = 'unsaved'
 
+          // Debounce timer for saveStatus
+          if (this._saveStatusTimer) clearTimeout(this._saveStatusTimer)
+          this._saveStatusTimer = setTimeout(() => {
+            this.saveStatus = 'saved'
+          }, 1000)
+
           this.ytext.doc.transact(() => {
             this.ytext.delete(0, this.ytext.length)
             this.ytext.insert(0, capped)
