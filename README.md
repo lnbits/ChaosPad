@@ -1,5 +1,38 @@
-# ChaosPad
+<a href="https://lnbits.com" target="_blank" rel="noopener noreferrer">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/QE6SIrs.png">
+    <img src="https://i.imgur.com/fyKPgVT.png" alt="LNbits" style="width:280px">
+  </picture>
+</a>
 
-## Collaborate on simple pads
+[![License: MIT](https://img.shields.io/badge/License-MIT-success?logo=open-source-initiative&logoColor=white)](./LICENSE)
+[![Built for LNbits](https://img.shields.io/badge/Built%20for-LNbits-4D4DFF?logo=lightning&logoColor=white)](https://github.com/lnbits/lnbits)
 
-Named in homage to the excellent https://pads.ccc.de
+# ChaosPad - [LNbits](https://lnbits.com) extension
+
+Simple collaborative text pads. Create shared documents that multiple people can edit together in real-time, inspired by [pads.ccc.de](https://pads.ccc.de).
+
+## How it works
+
+Create a pad and share the link. Anyone with the link can view and edit the document. Changes sync across all connected users.
+
+## Features
+
+- Real-time collaborative editing
+- Simple text formatting
+- Shareable pad links
+- No account required for collaborators
+
+## Usage
+
+1. Enable the extension in LNbits
+2. Create a new pad
+3. Share the pad link with collaborators
+4. Edit together in real-time
+
+## Powered by LNbits
+
+[LNbits](https://lnbits.com) is a free and open-source lightning accounts system.
+
+[![Visit LNbits Shop](https://img.shields.io/badge/Visit-LNbits%20Shop-7C3AED?logo=shopping-cart&logoColor=white&labelColor=5B21B6)](https://shop.lnbits.com/)
+[![Try myLNbits SaaS](https://img.shields.io/badge/Try-myLNbits%20SaaS-2563EB?logo=lightning&logoColor=white&labelColor=1E40AF)](https://my.lnbits.com/login)
