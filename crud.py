@@ -110,7 +110,7 @@ async def create_snapshot(pads_id: str, update_blob: bytes) -> None:
 
 
 async def get_latest_snapshot(pads_id: str) -> bytes | None:
-    row = await db.fetchone(
+    row: dict | None = await db.fetchone(
         """
         SELECT update_blob
         FROM chaospad.snapshots
@@ -124,14 +124,15 @@ async def get_latest_snapshot(pads_id: str) -> bytes | None:
 
 
 async def prune_old_snapshots(pads_id: str, keep: int = 20) -> None:
+    limit_clause = "LIMIT -1 OFFSET :keep" if db.type == "sqlite" else "LIMIT ALL OFFSET :keep"
     await db.execute(
-        """
+        f"""
         WITH old AS (
           SELECT id
           FROM chaospad.snapshots
           WHERE pads_id = :pads_id
           ORDER BY created_at DESC
-          LIMIT -1 OFFSET :keep
+          {limit_clause}
         )
         DELETE FROM chaospad.snapshots
         WHERE id IN (SELECT id FROM old)
